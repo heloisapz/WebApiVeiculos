@@ -919,7 +919,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "planoAssistencia": {
+          "plano": {
             "$ref": "#/components/schemas/PlanoAssistenciaModel"
           }
         },

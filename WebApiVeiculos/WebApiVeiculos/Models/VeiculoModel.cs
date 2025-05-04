@@ -21,6 +21,9 @@ namespace WebApiVeiculos.Models
         [ForeignKey("GrupoId")]
         public GrupoVeiculoModel GrupoVeiculo { get; set; }
 
-        public ICollection<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new List<VeiculoAssistenciaModel>();
+        public List<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new();
+
+
+        //public ICollection<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new List<VeiculoAssistenciaModel>();
     }
 }

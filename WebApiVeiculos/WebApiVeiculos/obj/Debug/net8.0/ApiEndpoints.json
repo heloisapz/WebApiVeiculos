@@ -366,8 +366,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiVeiculos.Controllers.VeiculoAssistenciaController",
-    "Method": "BuscarTodosAsync",
+    "ContainingType": "WebApiVeiculos.API.Controllers.VeiculoAssistenciaController",
+    "Method": "GetTodos",
     "RelativePath": "api/VeiculoAssistencia",
     "HttpMethod": "GET",
     "IsController": true,
@@ -376,7 +376,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiVeiculos.Controllers.VeiculoAssistenciaController",
+    "ContainingType": "WebApiVeiculos.API.Controllers.VeiculoAssistenciaController",
     "Method": "CriarAsync",
     "RelativePath": "api/VeiculoAssistencia",
     "HttpMethod": "POST",
@@ -392,7 +392,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiVeiculos.Controllers.VeiculoAssistenciaController",
+    "ContainingType": "WebApiVeiculos.API.Controllers.VeiculoAssistenciaController",
     "Method": "GetPorId",
     "RelativePath": "api/VeiculoAssistencia/{id}",
     "HttpMethod": "GET",
@@ -408,8 +408,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiVeiculos.Controllers.VeiculoAssistenciaController",
-    "Method": "Atualizar",
+    "ContainingType": "WebApiVeiculos.API.Controllers.VeiculoAssistenciaController",
+    "Method": "AtualizarAsync",
     "RelativePath": "api/VeiculoAssistencia/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -429,8 +429,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "WebApiVeiculos.Controllers.VeiculoAssistenciaController",
-    "Method": "Deletar",
+    "ContainingType": "WebApiVeiculos.API.Controllers.VeiculoAssistenciaController",
+    "Method": "DeletarAsync",
     "RelativePath": "api/VeiculoAssistencia/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,

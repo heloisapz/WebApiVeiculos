@@ -6,18 +6,19 @@ namespace WebApiVeiculos.Models
     public class VeiculoAssistenciaModel
     {
         [Key]
-        public int Id { get; set; } // Opcional: ou use chave composta abaixo no DbContext
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [Required]
         public int VeiculoId { get; set; }
 
         [ForeignKey("VeiculoId")]
-        public VeiculoModel Veiculo { get; set; }
+        public VeiculoModel? Veiculo { get; set; }
 
         [Required]
         public int PlanoId { get; set; }
 
         [ForeignKey("PlanoId")]
-        public PlanoAssistenciaModel PlanoAssistencia { get; set; }
+        public PlanoAssistenciaModel? Plano { get; set; }
     }
 }

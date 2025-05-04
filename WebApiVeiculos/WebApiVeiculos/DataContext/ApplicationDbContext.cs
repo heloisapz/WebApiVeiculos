@@ -41,7 +41,7 @@ namespace WebApiVeiculos.DataContext
 
             // N:1 - VeiculoAssistencia → Plano
             modelBuilder.Entity<VeiculoAssistenciaModel>()
-                .HasOne(va => va.PlanoAssistencia)
+                .HasOne(va => va.Plano)
                 .WithMany(p => p.VeiculoAssistencias)
                 .HasForeignKey(va => va.PlanoId);
         }

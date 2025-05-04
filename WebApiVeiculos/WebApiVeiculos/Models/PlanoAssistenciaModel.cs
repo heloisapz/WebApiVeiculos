@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApiVeiculos.Models
 {
@@ -8,7 +8,7 @@ namespace WebApiVeiculos.Models
         [Key]
         public int Id { get; set; }
 
-       public int EmpresaId { get; set; }
+        public int EmpresaId { get; set; }
 
         [ForeignKey("EmpresaId")]
         public EmpresaAssistenciaModel EmpresaAssistencia { get; set; }
@@ -19,6 +19,8 @@ namespace WebApiVeiculos.Models
         [Required]
         public string Cobertura { get; set; }
 
-        public ICollection<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new List<VeiculoAssistenciaModel>();
+        public List<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new();
+
+        //public ICollection<VeiculoAssistenciaModel> VeiculoAssistencias { get; set; } = new List<VeiculoAssistenciaModel>();
     }
 }
