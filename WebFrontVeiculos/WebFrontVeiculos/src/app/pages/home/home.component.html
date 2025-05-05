@@ -1,0 +1,67 @@
+<div class="alocacao-box">
+    <button> Cadastrar um novo veículo </button>
+    <button> Cadastrar um novo grupo </button>
+    <button> Cadastrar uma nova empresa </button>
+    <button> Cadastrar um novo plano </button>
+    <button> Cadastrar uma nova assistência de veículo </button>
+  
+    <div class="input-box">
+      <label for="search">Procurar</label>
+      <input id="search" type="text" placeholder="Procurar veículo, grupo, empresa ou plano" />
+    </div>
+  </div>  
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Veículo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let veiculo of veiculos">
+        <td>{{ veiculo.placa }}</td>
+      </tr>
+    </tbody>
+
+
+  </table>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grupo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grupo of grupos">
+        <td>{{ grupo.nome }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+<table class="table">
+<thead>
+    <tr>
+    <th>Empresa</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let empresa of empresas">
+    <td>{{ empresa.nome }}</td>
+    </tr>
+</tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th>Plano</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let plano of planos">
+        <td>{{ plano.descricao }}</td>
+        </tr>
+    </tbody>
+    </table>

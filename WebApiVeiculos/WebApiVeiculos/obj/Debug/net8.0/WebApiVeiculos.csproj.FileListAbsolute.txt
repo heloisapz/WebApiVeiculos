@@ -586,3 +586,4 @@ C:\Users\heloi\Desktop\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\WebApiVeicul
 C:\Users\heloi\Desktop\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\obj\Debug\net8.0\WebApiVeiculos.pdb
 C:\Users\heloi\Desktop\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\obj\Debug\net8.0\WebApiVeiculos.genruntimeconfig.cache
 C:\Users\heloi\Desktop\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\obj\Debug\net8.0\ref\WebApiVeiculos.dll
+C:\Users\infra\Desktop\WebApiVeiculo\WebApiVeiculos\WebApiVeiculos\WebApiVeiculos\obj\Debug\net8.0\WebApiVeiculos.sourcelink.json
