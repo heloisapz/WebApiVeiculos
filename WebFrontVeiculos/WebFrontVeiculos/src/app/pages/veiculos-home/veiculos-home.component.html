@@ -1,0 +1,39 @@
+<!-- BOTÃO DE CADASTRAR VEÍCULO -->
+<div class="btn-cadastro-container">
+    <button class="btn-cadastrar" routerLink="/cadastro-veiculo">Cadastrar veículo</button>
+  </div>
+  
+  <!-- CAMPO DE BUSCA -->
+  <div class="input-box">
+    <label for="search">Procurar</label>
+    <input id="search" type="text" placeholder="Procurar veículo" />
+  </div>
+  
+  <!-- TABELA DE VEÍCULOS -->
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Placa</th>
+          <th>Modelo</th>
+          <th>Grupo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculos">
+          <td>{{ veiculo.id }}</td>
+          <td>{{ veiculo.placa }}</td>
+          <td>{{ veiculo.modelo }}</td>
+          <td>{{ veiculo.grupoId }}</td>
+          <td>
+            <button class="btn-editar" >Editar</button> 
+            <button class="btn-excluir">Excluir</button>
+            <!-- (click)="openDialog(veiculo.id)" -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

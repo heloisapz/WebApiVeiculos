@@ -18,13 +18,16 @@ export class VeiculoService {
    return this.http.get<Veiculo[]>(this.ApiUrl);
   }
 
-  //endpoint para obter veiculo por id
-  // getVeiculo(id: number) : Observable<Veiculo> {
-  //   return this.http.get<Veiculo>(`${this.ApiUrl}/${id}`);
-  // } 
+  getVeiculoById(id: number) : Observable<Veiculo[]> {
+    return this.http.get<Veiculo[]>(`${this.ApiUrl}/${id}`);
+  } 
 
   // //endpoint para criar veiculo
-  // createVeiculo(veiculo: Veiculo) : Observable<Veiculo> {
-  //   return this.http.post<Veiculo>(this.ApiUrl, veiculo);
-  // }
+  createVeiculo(veiculo: Veiculo) : Observable<Veiculo[]> {
+    return this.http.post<Veiculo[]>(this.ApiUrl, veiculo);
+  }
+
+  updateVeiculo(veiculoId: number, veiculo: Veiculo): Observable<Veiculo[]> {
+    return this.http.put<Veiculo[]>(`${this.ApiUrl}`, veiculo);
+  }
 }

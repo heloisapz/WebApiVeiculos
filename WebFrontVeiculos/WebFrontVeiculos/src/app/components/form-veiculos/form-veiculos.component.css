@@ -1,0 +1,62 @@
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #faf7fd; /* fundo lilás bem claro */
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Título do formulário */
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ba76d6; 
+    font-size: 1.8rem;
+  }
+  
+  /* Caixa de entrada de dados */
+  .input_box {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input_box label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ba76d6; 
+  }
+  
+  .input_box input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ba76d6; 
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .input_box input:focus {
+    border-color: #ba76d6;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+    outline: none;
+  }
+  
+  /* Botão de submit */
+  .input_box button {
+    background-color: #ba76d6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    /*font-weight: bold;*/
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .input_box button:hover {
+    background-color: #ba76d6;
+  }
+  
