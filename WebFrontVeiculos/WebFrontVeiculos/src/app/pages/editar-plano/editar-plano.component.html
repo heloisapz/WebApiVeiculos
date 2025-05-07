@@ -1,0 +1,8 @@
+<div *ngIf="plano">
+    <app-form-planos 
+      [btnAcao]="btnAcao" 
+      [btnTitulo]="btnTitulo" 
+      [dadosPlanos]="plano" 
+      (onSubmit)="formularioPlano.setValue($event); submit()">
+    </app-form-planos>
+  </div>

@@ -1,0 +1,38 @@
+<!-- BOTÃO DE CADASTRAR VEÍCULO -->
+<!-- Modal de confirmação de exclusão -->
+<app-excluir
+*ngIf="empresaId"
+  [itemId]="empresaId"
+  (confirmDelete)="onConfirmDelete($event)">
+</app-excluir>
+
+<div class="btn-cadastro-container">
+    <button class="btn-cadastrar" routerLink="/cadastro-empresa">Cadastrar empresa</button>
+  </div>
+  
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Nome</th>
+          <th>Endereço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <td>{{ empresa.id }}</td>
+          <td>{{ empresa.nome }}</td>
+          <td>{{ empresa.endereco }}</td>
+          <td>
+            <button class="btn-editar" routerLink="/editar-empresa/{{empresa.id}}">Editar</button> 
+            <button class="btn-excluir" (click)="openDeleteModal(empresa.id!)">Excluir</button>
+            <!-- (click)="openDialog(veiculo.id)" -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

@@ -1,13 +1,16 @@
 <!-- BOTÃO DE CADASTRAR VEÍCULO -->
+<!-- Modal de confirmação de exclusão -->
+<app-excluir
+*ngIf="veiculoId"
+  [itemId]="veiculoId"
+  (confirmDelete)="onConfirmDelete($event)">
+</app-excluir>
+
 <div class="btn-cadastro-container">
     <button class="btn-cadastrar" routerLink="/cadastro-veiculo">Cadastrar veículo</button>
   </div>
   
   <!-- CAMPO DE BUSCA -->
-  <div class="input-box">
-    <label for="search">Procurar</label>
-    <input id="search" type="text" placeholder="Procurar veículo" />
-  </div>
   
   <!-- TABELA DE VEÍCULOS -->
   <div class="table-container">
@@ -28,12 +31,13 @@
           <td>{{ veiculo.modelo }}</td>
           <td>{{ veiculo.grupoId }}</td>
           <td>
-            <button class="btn-editar" >Editar</button> 
-            <button class="btn-excluir">Excluir</button>
+            <button class="btn-editar" routerLink="/editar-veiculo/{{veiculo.id}}">Editar</button> 
+            <button class="btn-excluir" (click)="openDeleteModal(veiculo.id!)">Excluir</button>
             <!-- (click)="openDialog(veiculo.id)" -->
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+  
   

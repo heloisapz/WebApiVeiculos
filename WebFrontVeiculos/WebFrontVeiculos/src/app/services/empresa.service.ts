@@ -13,18 +13,24 @@ export class EmpresaService {
 
   constructor(private http: HttpClient) { }
 
-  //endpoint para obter todos os veiculos
   getEmpresas() : Observable<Empresa[]> {
    return this.http.get<Empresa[]>(this.ApiUrl);
   }
 
-  //endpoint para obter veiculo por id
-  // getVeiculo(id: number) : Observable<Veiculo> {
-  //   return this.http.get<Veiculo>(`${this.ApiUrl}/${id}`);
-  // } 
+  getEmpresaById(id: number) : Observable<Empresa> {
+    return this.http.get<Empresa>(`${this.ApiUrl}/${id}`);
+  } 
 
-  // //endpoint para criar veiculo
-  // createVeiculo(veiculo: Veiculo) : Observable<Veiculo> {
-  //   return this.http.post<Veiculo>(this.ApiUrl, veiculo);
-  // }
+  createEmpresa(empresa: Empresa) : Observable<Empresa[]> {
+    return this.http.post<Empresa[]>(this.ApiUrl, empresa);
+  }
+
+  updateEmpresa(id: number, empresa: Empresa): Observable<Empresa> {
+    return this.http.put<Empresa>(`${this.ApiUrl}/${id}`, empresa);
+  }
+
+  deleteEmpresa(id: number): Observable<Empresa[]>{
+    return this.http.delete<Empresa[]>(`${this.ApiUrl}/${id}`);}
+ 
+
 }

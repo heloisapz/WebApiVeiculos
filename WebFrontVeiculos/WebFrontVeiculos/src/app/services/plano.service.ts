@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Plano } from '../models/planos';
-
+import { Observable } from 'rxjs';
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class PlanoService {
-
-  private ApiUrl = `${environment.ApiUrl}PlanoAssistencia`;
-
-  constructor(private http: HttpClient) { }
-
-  //endpoint para obter todos os veiculos
-  getPlanos() : Observable<Plano[]> {
-   return this.http.get<Plano[]>(this.ApiUrl);
+ 
+  private url = `${environment.ApiUrl}PlanoAssistencia`
+ 
+  constructor(private http: HttpClient) {
+ 
+   }
+ 
+   getPlanos() : Observable<Plano[]>{
+    return this.http.get<Plano[]>(this.url);
   }
-
-  //endpoint para obter veiculo por id
-  // getVeiculo(id: number) : Observable<Veiculo> {
-  //   return this.http.get<Veiculo>(`${this.ApiUrl}/${id}`);
-  // } 
-
-  // //endpoint para criar veiculo
-  // createVeiculo(veiculo: Veiculo) : Observable<Veiculo> {
-  //   return this.http.post<Veiculo>(this.ApiUrl, veiculo);
-  // }
+ 
+  createPlano(plano: Plano): Observable<Plano[]> {
+    return this.http.post<Plano[]>(`${this.url}`, plano);
+  }
+ 
+    getPlanoById(id: number) : Observable<Plano> {
+      return this.http.get<Plano>(`${this.url}/${id}`);
+    }
+ 
+    updatePlano(id: number, plano: Plano): Observable<Plano> {
+      return this.http.put<Plano>(`${this.url}/${id}`, plano);
+    }
+ 
+    deletePlano(id: number): Observable<Plano[]> {
+      return this.http.delete<Plano[]>(`${this.url}/${id}`);
+    }
 }

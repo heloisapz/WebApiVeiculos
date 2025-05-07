@@ -1,0 +1,41 @@
+<!-- BOTÃO DE CADASTRAR VEÍCULO -->
+<!-- Modal de confirmação de exclusão -->
+<app-excluir
+*ngIf="planoId"
+  [itemId]="planoId"
+  (confirmDelete)="onConfirmDelete($event)">
+</app-excluir>
+
+<div class="btn-cadastro-container">
+    <button class="btn-cadastrar" routerLink="/cadastro-plano">Cadastrar plano</button>
+  </div>
+  
+  <!-- TABELA DE VEÍCULOS -->
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Descricao</th>
+          <th>Cobertura</th>
+          <th>Empresa</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plano of planos">
+          <td>{{ plano.id }}</td>
+          <td>{{ plano.descricao }}</td>
+          <td>{{ plano.cobertura }}</td>
+          <td>{{ plano.empresaId }}</td>
+          <td>
+            <button class="btn-editar" routerLink="/editar-plano/{{plano.id}}">Editar</button> 
+            <button class="btn-excluir" (click)="openDeleteModal(plano.id!)">Excluir</button>
+            <!-- (click)="openDialog(veiculo.id)" -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

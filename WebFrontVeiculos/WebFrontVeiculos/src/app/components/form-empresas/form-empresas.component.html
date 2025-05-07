@@ -1,0 +1,23 @@
+<h1>{{ btnTitulo }}</h1>
+ 
+<form *ngIf="formularioEmpresa" [formGroup]="formularioEmpresa" (ngSubmit)="submit()">
+ 
+  <input type="hidden" formControlName="id">
+ 
+  <div class="input_box">
+<label for="nome">Nome</label>
+<input id="nome" type="text" formControlName="nome" placeholder="Digite o nome" required>
+</div>
+ 
+<div class="input_box">
+<label for="endereco">Endereço</label>
+<input id="endereco" type="text" formControlName="endereco" placeholder="Digite o endereço" required>
+</div>
+ 
+<div class="input_box">
+<button type="submit">{{ btnAcao }}</button>
+<!-- [disabled]="!formularioVeiculo.valid" -->
+<!-- <button type="button" routerLink="">Voltar</button> -->
+</div>
+ 
+</form>

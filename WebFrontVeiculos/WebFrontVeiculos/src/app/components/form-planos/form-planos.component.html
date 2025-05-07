@@ -1,0 +1,29 @@
+<h1>{{ btnTitulo }}</h1>
+ 
+<form *ngIf="formularioPlano" [formGroup]="formularioPlano" (ngSubmit)="submit()">
+ 
+  <input type="hidden" formControlName="id">
+ 
+  <div class="input_box">
+<label for="descricao">Descrição</label>
+<input id="descricao" type="text" formControlName="descricao" placeholder="Digite a descrição" required>
+</div>
+ 
+<div class="input_box">
+<label for="cobertura">Cobertura</label>
+<input id="cobertura" type="text" formControlName="cobertura" placeholder="Digite a cobertura" required>
+</div>
+ 
+ 
+<div class="input_box">
+<label for="empresaId">Empresa</label>
+<input id="empresaId" type="text" formControlName="empresaId" placeholder="Digite a empresa" required>
+</div>
+ 
+<div class="input_box">
+<button type="submit">{{ btnAcao }}</button>
+<!-- [disabled]="!formularioVeiculo.valid" -->
+<!-- <button type="button" routerLink="">Voltar</button> -->
+</div>
+ 
+</form>

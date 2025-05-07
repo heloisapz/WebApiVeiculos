@@ -1,64 +1,62 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VeiculoService } from '../../services/veiculo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Veiculo } from '../../models/veiculos';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormVeiculosComponent } from '../../components/form-veiculos/form-veiculos.component';
- 
+
 @Component({
   selector: 'app-editar-veiculo',
   standalone: false,
   templateUrl: './editar-veiculo.component.html',
   styleUrls: ['./editar-veiculo.component.css'],
 })
-export class EditarVeiculoComponent {
-  btnAcao = "Editar";
-  btnTitulo = "Editar Veículo";
-  veiculo!: Veiculo;  // Variável que será preenchida após a resposta da API
-  formularioVeiculo!: FormGroup;  // Declarando o formulário
- 
+export class EditarVeiculoComponent implements OnInit {
+  btnAcao: string = 'Editar';
+  btnTitulo: string = 'Editar Veículo';
+  veiculo!: Veiculo;
+  formularioVeiculo!: FormGroup;
+
   constructor(
+    private veiculoService: VeiculoService,
     private route: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder,
-    private veiculoService: VeiculoService
+    private fb: FormBuilder
   ) {}
- 
+
   ngOnInit(): void {
-    // Recuperando o id da rota para buscar o veículo
-    const veiculoId = Number(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.inicializarFormulario();
- 
-    // Buscando o veículo pelo id
-    this.veiculoService.getVeiculoById(veiculoId).subscribe({
-      next: (dados) => {
-        this.veiculo = dados;  // Atribuindo os dados do veículo
-        this.formularioVeiculo.patchValue(dados);  // Preenchendo o formulário com os dados
+
+    this.veiculoService.getVeiculoById(id).subscribe({
+      next: (data) => {
+        this.veiculo = data;
+        this.formularioVeiculo.patchValue(this.veiculo);
       },
-      error: (err) => console.error('Erro ao buscar veículo:', err)
+      error: (err) => {
+        console.error('Erro ao buscar veículo:', err);
+      }
     });
   }
- 
+
   inicializarFormulario(): void {
     this.formularioVeiculo = this.fb.group({
       id: [0],
       placa: ['', Validators.required],
       modelo: ['', Validators.required],
-      grupoId: [0, Validators.required]
+      grupoId: [0, Validators.required],
     });
   }
- 
+
   submit(): void {
     if (this.formularioVeiculo.valid) {
-      if (!this.veiculo) {
-        console.error("Veículo não carregado.");
-        return;  // Evita enviar o formulário antes de carregar os dados do veículo
-      }
-     
-      // Usando o id do veículo corretamente
-      this.veiculoService.updateVeiculo(this.veiculo.id!, this.formularioVeiculo.value).subscribe({
-        next: () => this.router.navigate(['/veiculo-home']),
-        error: (err) => console.error('Erro ao atualizar veículo:', err)
+      const veiculoAtualizado: Veiculo = {
+        ...this.veiculo,
+        ...this.formularioVeiculo.value
+      };
+
+      this.veiculoService.updateVeiculo(veiculoAtualizado.id!, veiculoAtualizado).subscribe({
+        next: () => this.router.navigate(['/veiculos-home']),
+        error: (err) => console.error('Erro ao atualizar veículo:', err),
       });
     }
   }

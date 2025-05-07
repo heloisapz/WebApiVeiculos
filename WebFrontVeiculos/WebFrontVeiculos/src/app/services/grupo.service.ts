@@ -13,18 +13,24 @@ export class GrupoService {
 
   constructor(private http: HttpClient) { }
 
-  //endpoint para obter todos os veiculos
   getGrupos() : Observable<Grupo[]> {
    return this.http.get<Grupo[]>(this.ApiUrl);
   }
 
-  //endpoint para obter veiculo por id
-  // getVeiculo(id: number) : Observable<Veiculo> {
-  //   return this.http.get<Veiculo>(`${this.ApiUrl}/${id}`);
-  // } 
+  getGrupoById(id: number) : Observable<Grupo> {
+    return this.http.get<Grupo>(`${this.ApiUrl}/${id}`);
+  } 
 
-  // //endpoint para criar veiculo
-  // createVeiculo(veiculo: Veiculo) : Observable<Veiculo> {
-  //   return this.http.post<Veiculo>(this.ApiUrl, veiculo);
-  // }
+  createGrupo(grupo: Grupo) : Observable<Grupo[]> {
+    return this.http.post<Grupo[]>(this.ApiUrl, grupo);
+  }
+
+  updateGrupo(id: number, grupo: Grupo): Observable<Grupo> {
+    return this.http.put<Grupo>(`${this.ApiUrl}/${id}`, grupo);
+  }
+
+  deleteGrupo(id: number): Observable<Grupo[]>{
+    return this.http.delete<Grupo[]>(`${this.ApiUrl}/${id}`);}
+ 
+
 }
