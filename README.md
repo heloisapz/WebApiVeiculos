@@ -10,6 +10,7 @@ Este repositório contém o back-end da aplicação de alocação de veículos, 
 - Entity Framework Core
 - MySQL
 - Docker
+- Angular CLI 
 
 ---
 
@@ -18,6 +19,8 @@ Este repositório contém o back-end da aplicação de alocação de veículos, 
 - [.NET SDK 8+](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/)
 - [MySQL Workbench ou outro cliente](https://www.mysql.com/products/workbench/) (opcional)
+- Node.js
+- [Angular Cli] (instalar com `npm install -g @angular-cli`)
 
 ---
 
@@ -28,5 +31,17 @@ Execute o comando abaixo para iniciar um container MySQL com os parâmetros nece
 <pre>
   <code>
 docker run -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=veiculosdatabase -e MYSQL_USER=usuario -e MYSQL_PASSWORD=123456 -p 3307:3306 -d mysql:latest
+  </code>
+</pre>
+
+## Atualização de pacotes e rodando a aplicação
+
+Execute os comando abaixos para atualizar os pacotes e rodar a aplicação:
+
+
+<pre>
+  <code>
+npm install <br>
+ng serve
   </code>
 </pre>
