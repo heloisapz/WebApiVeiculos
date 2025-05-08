@@ -14,6 +14,9 @@ import { EditarEmpresaComponent } from './pages/editar-empresa/editar-empresa.co
 import { PlanosHomeComponent } from './pages/planos-home/planos-home.component';
 import { CadastroPlanoComponent } from './pages/cadastro-plano/cadastro-plano.component';
 import { EditarPlanoComponent } from './pages/editar-plano/editar-plano.component';
+import { AssistenciasHomeComponent } from './pages/asssistencias-home/asssistencias-home.component';
+import { CadastroAssistenciaComponent } from './pages/cadastro-assistencias/cadastro-assistencias.component';
+import { EditarAssistenciasComponent } from './pages/editar-assistencias/editar-assistencias.component';
 //import { PlanosHomeComponent } from './pages/planos-home/planos-home.component';
 //import { EmpresasHomeComponent } from './pages/empresas-home/empresas-home.component';
 
@@ -31,7 +34,10 @@ const routes: Routes = [
   { path: 'editar-empresa/:id', component: EditarEmpresaComponent },
   { path: 'planos-home', component: PlanosHomeComponent },
   { path: 'cadastro-plano', component: CadastroPlanoComponent },
- { path: 'editar-plano/:id', component: EditarPlanoComponent },
+  { path: 'editar-plano/:id', component: EditarPlanoComponent },
+  { path: 'assistencias-home', component: AssistenciasHomeComponent },
+  { path: 'cadastro-assistencias', component: CadastroAssistenciaComponent },
+  { path: 'editar-assistencias/:id', component: EditarAssistenciasComponent },
  // { path: '', redirectTo: '/veiculos-home', pathMatch: 'full' }, // rota padrão opcional
 ];
 
